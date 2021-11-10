@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+     <style>
+     .overlay {
+         background-color:black;
+        min-height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+      }
+      .overlay h2 {
+          background-color:black;
+          color: white;
+          font-weight: 600;
+          margin: 2rem 3rem 0;
+          padding: 5px 15px;
+          text-align: center;
+      }</style>
+
+    {% if title %}
+    <title>Flask Blog - {{ title }}</title>
+{% else %}
+    <title>Flask Blog</title>
+{% endif %}
+</head>
+<body>
+  <header style="background-color:#00024e; height: 80px;">
+    <div class="d-flex">
+        <div class="nav-menu">
+            <div class="row">
+                <div class="col-md-1">
+     <img src="static/images/logo.png" style="margin-left: 25px;
+     margin-top: 5px;
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;" />
+    </div>
+    <div class="col-md-2">
+        <h2 style="margin-top:26px;font-size:28px;color:white">CloudAID</h2>
+    </div>
+      </div>
+            </div>
+        </div>
+</header>
+<div style="background-image:url(static/videos/homepage2.gif);width:1520px;height:599px;">
+    <div class="container" style="padding-top:130px;height:180px;margin-left:20%">
+
+        <div class="row" style="width:950px;">
+            <div class="col-lg-12">
+
+                <!-- Tabs Links -->
+              
+                <!-- end of tabs links -->
+
+                <!-- Tabs Content -->
+                <div class="tab-content" >
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1" style="background-color: white;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container" style="width:500px;">
+                                    <img class="img-fluid" src="{{ url_for('static',filename='images/translate.jpg') }}" style="height:351px;width:440px;"alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                
+                                    <div class="form-container" style="margin-top:20px;">
+                                        <form action="/sound" method="post">
+                                            <div class="row">
+                                                <div class="col-md-6" style="font-family: cursive;
+                                                font-size: 17px;
+                                                font-weight: bold;"> Enter the text you want to translate</div>
+                                                <div class="col-md-6"><textarea type="text" name="texttotranslate"></textarea></div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-6" style="font-family: cursive;
+                                                font-size: 17px;
+                                                font-weight: bold;"> Enter the Source Language</div>
+                                                <div class="col-md-6"> <input type="text" name="sourcelanguage"><br></div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-6" style="font-family: cursive;
+                                                font-size: 17px;
+                                                font-weight: bold;"> Enter the Target language </div>
+                                                <div class="col-md-6"><input type="text" name="targetlanguage"></div>
+                                            </div>
+                                            <br>
+                                            
+                                          <input type="submit" style="margin-left:80px;padding:5px;border-radius:7px;background-color:rgb(0, 0, 51);color:white;width:220px;font-size:20px;"value="Translate">
+                                            </form>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-5" style="font-family: cursive;
+                                                font-size: 17px;
+                                                font-weight: bold;"> Translated Text </div>
+                                                <div class="col-md-7">{% if conversion %}
+                                                    <h2 style="font-size:25px;color:black;font-weight:bold;"> {{ conversion }} </h2>
+                                                    {% endif %}</div>
+                                            </div>
+                                            
+                
+                                    </div> <!-- end of form container -->
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                
+
+                </div> <!-- end of tab content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div>
+</div>
+
+
+<footer class="footer" style="height:20px;min-height:80px;background-color: #00024e;">
+
+
+
+    <div class="container">
+    <ul class="foote_bottom_ul_amrc">
+    <li style="color:white;"><a href="{{ url_for('home') }}" style="color:white;">Home</a></li>
+    <li style="color:white;">Copyright @2017 |<a href="#">&nbsp; CloudAid</a></li>
+    </ul>
+    <!--foote_bottom_ul_amrc ends here-->
+   
+
+    <!--social_footer_ul ends here-->
+    </div>
+
+    </footer>
+     
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

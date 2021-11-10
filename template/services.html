@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+     <style>
+     .overlay {
+         background-color:black;
+        min-height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+      }
+      .overlay h2 {
+          background-color:black;
+          color: white;
+          font-weight: 600;
+          margin: 2rem 3rem 0;
+          padding: 5px 15px;
+          text-align: center;
+      }</style>
+
+    {% if title %}
+    <title>Flask Blog - {{ title }}</title>
+{% else %}
+    <title>Flask Blog</title>
+{% endif %}
+</head>
+<body>
+  <header style="background-color:#00024e; height: 80px;">
+    <div class="d-flex">
+        <div class="nav-menu">
+            <div class="row">
+                <div class="col-md-1">
+     <img src="static/images/logo.png" style="margin-left: 25px;
+     margin-top: 5px;
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;" />
+    </div>
+    <div class="col-md-2">
+        <h2 style="margin-top:26px;font-size:28px;color:white">CloudAID</h2>
+    </div>
+      </div>
+            </div>
+        </div>
+</header>
+<div style="background-image:url(static/videos/homepage2.gif);width:1520px;height:599px;">
+  <div class="row" style="padding-top:140px;margin-left:50px;">
+    <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <div class="card" >
+            <div class="box" style="height:300px;background-image:linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(static/videos/text_translate.jpg)">
+              
+              <div class="content" style="    margin-top: 60%;
+              padding: 20px;
+              text-align: center;
+              background-color: #cac7b3;">
+          
+                <h3 style="color:black;font-family: revert;"><a href="{{ url_for('translate') }}" style="text-decoration:none;">Text translation</a></h3>
+              
+               
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" >
+            <div class="box" style="height:300px;background-image:linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(static/videos/Capture.PNG)">
+              
+              <div class="content" style="    margin-top: 60%;
+              padding: 20px;
+              text-align: center;
+              background-color: #cac7b3;">
+          
+                <h3 style="color:black;font-family: revert;"><a href="{{ url_for('index2') }}" style="text-decoration:none;">Sentiment Analysis</h3>
+              
+               
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" >
+            <div class="box" style="height:300px;background-image:linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(static/videos/txt.PNG)">
+              
+              <div class="content" style="    margin-top: 60%;
+              padding: 20px;
+              text-align: center;
+              background-color: #cac7b3;">
+          
+                <h3 style="color:black;font-family: revert;"><a href="{{ url_for('index3') }}" style="text-decoration:none;">Text to speech</a></h3>
+              
+               
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-2"></div>
+  </div>    
+</div>
+
+
+  <footer class="footer" style="height:20px;min-height:80px;background-color: #00024e;">
+
+
+
+      <div class="container">
+      <ul class="foote_bottom_ul_amrc">
+      <li style="color:white;"><a href="{{ url_for('home') }}" style="color:white;">Home</a></li>
+      <li style="color:white;">Copyright @2017 |<a href="#">&nbsp; CloudAid</a></li>
+      </ul>
+      <!--foote_bottom_ul_amrc ends here-->
+     
+
+      <!--social_footer_ul ends here-->
+      </div>
+
+      </footer>
+     
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
